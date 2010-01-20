@@ -1,0 +1,25 @@
+Insstall
+- Drop zip file in 'plugins' folder
+-- see http://cfwheels.org/docs/chapter/using-and-creating-plugins
+
+Usage
+- Create subfolders in your 'models' folder
+- Create a new model cfc
+- Copy models/Model.cfc and models/Wheels.cfc to new folder
+- Update path in models/[newfolder]/Wheels.cfc to make sure it points to the proper wheels folder
+
+- In a controller do, model("[newfolder]/[model]").method().
+
+Example
+models
+--> admin
+----> User.cfc
+----> Model.cfc
+----> Wheels.cfc
+--> User.cfc
+--> Model.cfc
+--> Wheels.cfc
+
+In a controller action, do this:
+//index function
+<cfset data = model("admin/user").findAll() />
